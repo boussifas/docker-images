@@ -15,6 +15,9 @@ RUN apk add --no-cache curl jq
 RUN apk add --no-cache python3 py3-pip
 RUN pip install awscli
 
+## ANSIBLE PACKAGE ##
+Run apk add ansible
+
 CMD echo "Succesfully installed ! "
 
 ## HEALTHCHECK --interval=5m --timeout=3s \ CMD curl -f http://localhost/ || exit 1
