@@ -1,7 +1,5 @@
 FROM docker:dind
 
-LABEL version="0.0.2-beta"
-
 ## ENABLE DOCKERBUILT
 #ENV DOCKER_BUILDKIT=1
 
@@ -15,10 +13,10 @@ RUN apk add --no-cache curl jq
 RUN apk add --no-cache python3 py3-pip
 RUN pip install awscli
 
-## ANSIBLE PACKAGE ##
-Run apk add ansible
 
-CMD echo "Succesfully installed ! "
+## ANSIBLE PACKAGE ##
+FROM willhallonline/ansible:latest
+CMD [ "ansible-playbook", "--version" ]
 
 ## HEALTHCHECK --interval=5m --timeout=3s \ CMD curl -f http://localhost/ || exit 1
 
