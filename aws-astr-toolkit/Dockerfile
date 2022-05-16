@@ -1,4 +1,4 @@
-FROM docker:20.10.8-dind
+FROM docker:20.10.15-dind
 
 ## INSTALLING JQ PACKAGE##
 RUN apk add --no-cache curl jq git
